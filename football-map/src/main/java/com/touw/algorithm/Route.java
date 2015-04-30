@@ -12,6 +12,7 @@ public class Route implements Comparable<Route>
 	private Leg SaturdayLeg = null;
 	private Leg SundayLeg = null;
 	private long fitness = 0;
+	private long actualDuration = 0;
 	private int index = 0;
 	
 	public Route(int index)
@@ -36,12 +37,14 @@ public class Route implements Comparable<Route>
 			if (fridaycount > 1) throw new Exception("You can't have more than one Thursday to Friday Leg");
 			FridayLeg = leg;
 			fitness += leg.duration;
+			actualDuration += leg.duration;
 			break;
 		case Leg.TYPE_SATURDAY_LEG:
 			saturdaycount++;
 			if (saturdaycount > 1) throw new Exception("You can't have more than one Friday to Saturday Leg");
 			SaturdayLeg = leg;
 			fitness += leg.duration * 2;
+			actualDuration += leg.duration;
 			break;
 		case Leg.TYPE_SUNDAY_LEG:
 			sundaycount++;
@@ -72,7 +75,7 @@ public class Route implements Comparable<Route>
 		games += "Hours: " + new BigDecimal((double)SaturdayLeg.duration * 0.000277778).setScale(1, BigDecimal.ROUND_HALF_UP) + "\n";
 		games += SaturdayLeg.destination.toString() + "\n";
 		
-		String out = "Total Hours: " + new BigDecimal((double)this.fitness * 0.000277778).setScale(1, BigDecimal.ROUND_HALF_UP) + "\n" +
+		String out = "Total Hours: " + new BigDecimal((double)this.actualDuration * 0.000277778).setScale(1, BigDecimal.ROUND_HALF_UP) + "\n" +
 				"\n" + games;
 		
 		return out;
@@ -104,6 +107,10 @@ public class Route implements Comparable<Route>
 	protected Object clone() throws CloneNotSupportedException {
 		// TODO Auto-generated method stub
 		return super.clone();
+	}
+
+	public long getActualDuration() {
+		return actualDuration;
 	}
 
 	
