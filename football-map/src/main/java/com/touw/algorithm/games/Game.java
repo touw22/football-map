@@ -79,26 +79,7 @@ public class Game
 		{
 			stadium = "Foreman Field, Norfolk, VA";
 		}
-		else if (stadium.equals("Stanford Stadium, Stanford, CA"))
-		{
-			stadium = "601 Nelson Rd, Stanford, CA 94305";
-		}
-		else if (stadium.equals("Bulldog Stadium, Fresno, CA"))
-		{
-			stadium = "1600 E Bulldog Ln, Fresno, CA 93710";
-		}
-		else if (stadium.equals("Rose Bowl, Los Angeles, CA"))
-		{
-			stadium = "1001 Rose Bowl Dr, Pasadena, CA 91103";
-		}
-		else if (stadium.equals("H.A. Chapman Stadium, Tulsa, OK"))
-		{
-			stadium = "3112 E 8th St, Tulsa, OK 74104";
-		}
-		else if (stadium.equals("Bright House Networks Stadium, Orlando, FL"))
-		{
-			stadium = "4465 Knights Victory Way, Orlando, FL 32816";
-		}
+		
 		this.stadium = stadium;
 	}
 
