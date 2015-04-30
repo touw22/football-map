@@ -26,7 +26,6 @@ public class AlgorithmDriver
 				//runGetDistances(args[0], weekId);
 			
 				runAlgorithm(weekId, weekNumber);
-				//runAlgorithm("1022");
 				weekNumber++;
 				
 			} catch (Exception e) {
